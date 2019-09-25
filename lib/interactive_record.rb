@@ -53,7 +53,7 @@ class InteractiveRecord
   end
 
   def self.find_by (attr)
-    sql = "SELECT * FROM #{self.table_name} WHERE #{attr.keys.first.to_s} = #{attr.values.first}"
+    sql = "SELECT * FROM #{self.table_name} WHERE #{attr.keys.first.to_s} = #{attr.values.first.to_s}"
     DB[:conn].execute(sql)
     #binding.pry
   end
